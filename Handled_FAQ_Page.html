@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Handled. Dubai</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0A0A0A;--white:#FFFFFF;--gray:#666;--light:#F5F5F5;--border:#E5E5E5;}
+body{font-family:Arial,sans-serif;background:var(--white);color:var(--black);line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:100;}
+.nav-logo{font-size:18px;font-weight:300;letter-spacing:6px;text-decoration:none;color:var(--black);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+.nav-links a:hover{color:var(--black);}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 24px;border:none;cursor:pointer;font-size:12px;letter-spacing:2px;font-family:Arial;text-transform:uppercase;}
+
+.page-hero{padding:140px 40px 80px;background:var(--black);text-align:center;}
+.page-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:24px;}
+.page-hero h1{font-size:clamp(32px,5vw,60px);font-weight:200;letter-spacing:6px;color:var(--white);text-transform:uppercase;margin-bottom:20px;}
+.page-hero p{font-size:15px;color:#888;max-width:500px;margin:0 auto;line-height:2;}
+
+.faq-wrap{max-width:800px;margin:0 auto;padding:80px 40px;}
+.faq-section{margin-bottom:64px;}
+.faq-section-title{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.faq-item{border-bottom:1px solid var(--border);padding:24px 0;}
+.faq-q{font-size:17px;font-weight:400;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;letter-spacing:.3px;}
+.faq-q .toggle{font-size:20px;font-weight:200;color:var(--gray);flex-shrink:0;transition:transform .2s;}
+.faq-a{font-size:14px;color:var(--gray);line-height:2;padding-top:16px;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .toggle{transform:rotate(45deg);}
+
+.still-questions{background:var(--light);padding:60px 40px;text-align:center;margin-top:40px;}
+.still-questions h3{font-size:24px;font-weight:300;letter-spacing:2px;margin-bottom:16px;}
+.still-questions p{font-size:14px;color:var(--gray);margin-bottom:32px;line-height:2;}
+.btn-dark{background:var(--black);color:var(--white);padding:16px 40px;border:none;cursor:pointer;font-size:12px;letter-spacing:3px;font-family:Arial;text-transform:uppercase;text-decoration:none;display:inline-block;}
+
+footer{padding:40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-size:15px;font-weight:300;letter-spacing:5px;}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+
+@media(max-width:768px){
+  nav{padding:16px 20px;}.nav-links{display:none;}
+  .page-hero{padding:100px 20px 60px;}
+  .faq-wrap{padding:60px 20px;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">HANDLED.</a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="faq.html">FAQ</a>
+    <a href="how.html">How it works</a>
+    <a href="about.html">About</a>
+  </div>
+  <button class="nav-cta" onclick="window.location.href='index.html#pricing'">Get Started</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-tag">Everything you need to know</div>
+  <h1>FAQ</h1>
+  <p>Honest answers to every question before you decide.</p>
+</div>
+
+<div class="faq-wrap">
+
+  <div class="faq-section">
+    <div class="faq-section-title">About the service</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is this a real person or an AI bot? <span class="toggle">+</span></div>
+      <div class="faq-a">A real person. Every message you send is read and responded to by a human assistant — not a chatbot, not an automated system. We use technology behind the scenes to help our team work faster, but you will always be communicating with a real person who knows your preferences and takes responsibility for every task.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What counts as 1 request? <span class="toggle">+</span></div>
+      <div class="faq-a">1 request = 1 specific action, up to 15 minutes of your assistant's time. Examples: book a restaurant, order flowers, research 3 hotels, arrange a taxi, book a cleaning service. If a task is more complex (like planning a full trip or coordinating a renovation), it's handled as an add-on with a fixed fee agreed upfront. We always tell you before we start.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I need something at 2am? <span class="toggle">+</span></div>
+      <div class="faq-a">We're available 7am–11pm on WhatsApp. Night tasks are handled — if your request needs an immediate response and can't wait, we act. For less urgent tasks sent overnight, you'll receive a confirmation first thing in the morning. Elite plan members have guaranteed response for urgent tasks at any hour.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How quickly do you respond? <span class="toggle">+</span></div>
+      <div class="faq-a">Essential plan: within 30 minutes during active hours. Pro plan: within 15 minutes. Elite plan: within 10 minutes, 7am–11pm. In practice, most messages are answered in under 5 minutes during the day. We don't use auto-replies — when you get a message, a real person has read your request.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you work with all budgets? <span class="toggle">+</span></div>
+      <div class="faq-a">Yes. We work with whatever budget you specify. Whether you want flowers for AED 150 or AED 1,500, we find the best options within your range. We never upsell or push you toward more expensive options — our job is to find the best value for your specific budget.</div>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-section-title">Payments & pricing</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do I pay Handled. for the vendors too? <span class="toggle">+</span></div>
+      <div class="faq-a">No. You always pay vendors directly — the restaurant, the florist, the hotel. Handled. charges only your monthly subscription. We never touch your money for vendor payments. You receive a payment link directly from the vendor and pay them. This keeps everything transparent and you stay fully in control.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel anytime? <span class="toggle">+</span></div>
+      <div class="faq-a">Yes. No contracts, no notice period, no cancellation fees. Cancel anytime and your subscription simply doesn't renew the following month. We don't believe in locking people in — we'd rather earn your loyalty every month.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I don't use all my requests in a month? <span class="toggle">+</span></div>
+      <div class="faq-a">Unused requests don't roll over to the next month. The subscription covers access to your assistant and their availability — think of it like a gym membership. That said, most active members use their requests fully once they get used to having an assistant.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What are add-ons and when do they apply? <span class="toggle">+</span></div>
+      <div class="faq-a">Add-ons are for complex tasks that take more than 15 minutes — like planning a holiday, coordinating a renovation, or organising a relocation. The fee covers only our time for coordination. You always pay vendors directly. We tell you the add-on cost before starting, and you approve it. No surprises.</div>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-section-title">Privacy & trust</div>
+
+    <div class="faq-item">
+      <div class="faq-q">What do you do with my personal information? <span class="toggle">+</span></div>
+      <div class="faq-a">Your information is used only to serve you better. We store your preferences, past tasks and relevant details so we can anticipate your needs without asking repeatedly. We never share your information with vendors beyond what's needed to complete your task, and we never sell your data to anyone. Full details in our Privacy Policy.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is my WhatsApp conversation private? <span class="toggle">+</span></div>
+      <div class="faq-a">Yes. All conversations are confidential. Our team is bound by strict confidentiality. We don't discuss client tasks externally, and all case studies or examples shared publicly are anonymised with client permission.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if something goes wrong with a task? <span class="toggle">+</span></div>
+      <div class="faq-a">We take responsibility. If we make an error, we fix it. The request won't count against your monthly allowance, and we'll resolve the situation at no extra cost. We're honest when things don't go as planned — you'll always know what happened and what we're doing to resolve it.</div>
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <div class="faq-section-title">Getting started</div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does onboarding work? <span class="toggle">+</span></div>
+      <div class="faq-a">After subscribing, you'll receive a WhatsApp message from your assistant within a few minutes. We'll ask you 10 quick questions — your area, budget preferences, favourite restaurants, dietary requirements and a few more. Takes about 3 minutes. From that point, we start handling tasks immediately. The more we work together, the less we need to ask.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Which plan should I choose? <span class="toggle">+</span></div>
+      <div class="faq-a">Essential (599 AED) is great if you want to try the service — about 1 task per day. Pro (999 AED) is our most popular plan and includes travel planning and medical coordination. Family (1,499 AED) is ideal if multiple family members need assistance. Elite (1,999 AED) is for people who want their assistant to proactively manage their schedule and handle everything. If you're not sure, start with Essential and upgrade anytime.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I message in Arabic? <span class="toggle">+</span></div>
+      <div class="faq-a">You can message us in English or Arabic. Our assistants communicate with vendors in English and Arabic — which is particularly useful when dealing with local suppliers who may not always respond well in English.</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="still-questions">
+  <h3>Still have a question?</h3>
+  <p>Message us directly — a real person will reply within 15 minutes.</p>
+  <a href="https://wa.me/971500000000?text=Hi%2C%20I%20have%20a%20question%20about%20Handled." class="btn-dark" target="_blank">Message Us on WhatsApp →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">HANDLED.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="how.html">How it works</a>
+    <a href="about.html">About</a>
+  </div>
+  <div style="font-size:11px;color:#bbb;">© 2025 Handled. Dubai · behandled.me</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>

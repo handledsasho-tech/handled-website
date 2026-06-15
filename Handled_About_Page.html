@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Handled. Dubai</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0A0A0A;--white:#FFFFFF;--gray:#666;--light:#F5F5F5;--border:#E5E5E5;}
+body{font-family:Arial,sans-serif;background:var(--white);color:var(--black);line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:100;}
+.nav-logo{font-size:18px;font-weight:300;letter-spacing:6px;text-decoration:none;color:var(--black);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+.nav-links a:hover{color:var(--black);}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 24px;border:none;cursor:pointer;font-size:12px;letter-spacing:2px;font-family:Arial;text-transform:uppercase;text-decoration:none;}
+
+/* HERO */
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 40px 80px;background:var(--black);}
+.hero-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#444;margin-bottom:32px;}
+.hero h1{font-size:clamp(40px,7vw,90px);font-weight:200;letter-spacing:4px;color:var(--white);line-height:1.1;text-transform:uppercase;max-width:800px;}
+.hero-sub{font-size:16px;color:#666;margin-top:32px;max-width:560px;line-height:2;font-weight:300;}
+
+/* STORY */
+.story-section{padding:100px 40px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.story-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:32px;}
+.story-text p{font-size:16px;color:#333;line-height:2;margin-bottom:24px;}
+.story-text p:first-child{font-size:20px;font-weight:300;color:var(--black);line-height:1.8;}
+.story-stats{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.stat{background:var(--white);padding:32px 28px;}
+.stat-num{font-size:48px;font-weight:200;color:var(--black);letter-spacing:2px;line-height:1;margin-bottom:8px;}
+.stat-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+
+/* PHILOSOPHY */
+.philosophy{background:var(--black);padding:100px 0;}
+.philosophy-inner{max-width:1100px;margin:0 auto;padding:0 40px;}
+.philosophy h2{font-size:clamp(32px,5vw,64px);font-weight:200;letter-spacing:4px;color:var(--white);text-transform:uppercase;margin-bottom:60px;}
+.philosophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+.phil-item{border-top:1px solid #1a1a1a;padding-top:28px;}
+.phil-num{font-size:11px;letter-spacing:3px;color:#333;margin-bottom:16px;}
+.phil-title{font-size:18px;font-weight:300;color:var(--white);margin-bottom:12px;letter-spacing:.5px;}
+.phil-text{font-size:13px;color:#666;line-height:2;}
+
+/* WHAT MAKES US DIFFERENT */
+.different{padding:100px 40px;max-width:1100px;margin:0 auto;}
+.diff-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:60px;text-align:center;}
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.diff-item{background:var(--white);padding:40px 36px;}
+.diff-title{font-size:20px;font-weight:300;margin-bottom:16px;letter-spacing:.5px;}
+.diff-text{font-size:14px;color:var(--gray);line-height:2;}
+
+/* VALUES */
+.values{background:var(--light);padding:100px 0;}
+.values-inner{max-width:1100px;margin:0 auto;padding:0 40px;}
+.values-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:60px;text-align:center;}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+.value{background:var(--white);padding:32px 24px;border:1px solid var(--border);}
+.value-title{font-size:15px;font-weight:500;margin-bottom:12px;letter-spacing:.5px;}
+.value-text{font-size:13px;color:var(--gray);line-height:1.9;}
+
+/* CTA */
+.cta-section{background:var(--black);padding:100px 40px;text-align:center;}
+.cta-section h2{font-size:clamp(32px,5vw,60px);font-weight:200;letter-spacing:6px;color:var(--white);text-transform:uppercase;margin-bottom:20px;}
+.cta-section p{font-size:15px;color:#666;margin-bottom:48px;line-height:2;max-width:500px;margin-left:auto;margin-right:auto;}
+.btn-white{background:var(--white);color:var(--black);padding:18px 48px;border:none;cursor:pointer;font-size:12px;letter-spacing:3px;font-family:Arial;text-transform:uppercase;text-decoration:none;display:inline-block;transition:opacity .2s;}
+.btn-white:hover{opacity:.85;}
+
+footer{padding:48px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+.footer-logo{font-size:16px;font-weight:300;letter-spacing:5px;}
+.footer-tagline{font-size:11px;color:var(--gray);letter-spacing:2px;margin-top:6px;}
+.footer-links{display:flex;gap:28px;}
+.footer-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+.footer-links a:hover{color:var(--black);}
+
+@media(max-width:900px){
+  nav{padding:16px 20px;}.nav-links{display:none;}
+  .hero{padding:100px 24px 60px;}
+  .story-section{grid-template-columns:1fr;gap:48px;padding:70px 24px;}
+  .philosophy-inner{padding:0 24px;}
+  .philosophy-grid{grid-template-columns:1fr;gap:40px;}
+  .different{padding:70px 24px;}
+  .diff-grid{grid-template-columns:1fr;}
+  .values-inner{padding:0 24px;}
+  .values-grid{grid-template-columns:1fr 1fr;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">HANDLED.</a>
+  <div class="nav-links">
+    <a href="how.html">How it works</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+  <a href="index.html#pricing" class="nav-cta">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Our story</div>
+  <h1>Built for people<br>who don't have<br>time for this.</h1>
+  <p class="hero-sub">Handled. was born from 12 years of living and working in Dubai — watching busy people lose hours every week to tasks that shouldn't take hours.</p>
+</div>
+
+<!-- STORY -->
+<section class="story-section">
+  <div>
+    <div class="story-label">Why we exist</div>
+    <div class="story-text">
+      <p>Dubai is one of the world's most dynamic cities — but living here takes work. Restaurants to book, deliveries to coordinate, appointments to schedule, services to find. It never stops.</p>
+      <p>We spent years watching people — smart, successful, busy people — lose hours every week to this. Not because they wanted to. Because there was no better option.</p>
+      <p>Handled. is that better option. A real personal assistant, available on WhatsApp, who handles the details so you can focus on what actually matters.</p>
+      <p>We're not an app. We're not a chatbot. We're a team of real people who know Dubai, know your preferences, and take responsibility for every task we handle.</p>
+    </div>
+  </div>
+  <div>
+    <div class="story-stats">
+      <div class="stat">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Years of Dubai experience behind Handled.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">7am</div>
+        <div class="stat-label">To 11pm — every day, no exceptions</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15</div>
+        <div class="stat-label">Minutes — maximum response time on Pro plan</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Message — all it takes to get anything handled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<div class="philosophy">
+  <div class="philosophy-inner">
+    <h2>How we think</h2>
+    <div class="philosophy-grid">
+      <div class="phil-item">
+        <div class="phil-num">01</div>
+        <div class="phil-title">People, not technology</div>
+        <div class="phil-text">AI can search. AI can draft. But AI can't call a restaurant on your behalf, negotiate with a supplier, or make a judgment call when something doesn't go as planned. People can. Every task at Handled. is handled by a human who takes responsibility.</div>
+      </div>
+      <div class="phil-item">
+        <div class="phil-num">02</div>
+        <div class="phil-title">Less friction, more done</div>
+        <div class="phil-text">We obsess over removing unnecessary steps. One message. No forms, no portals, no back-and-forth. You message us, we act, you get results. The simpler the experience, the more time you save.</div>
+      </div>
+      <div class="phil-item">
+        <div class="phil-num">03</div>
+        <div class="phil-title">Get better over time</div>
+        <div class="phil-text">Every task makes us more useful to you. We learn your preferences, your budget, your habits. After a month, we anticipate needs you haven't expressed. After six months, we're an extension of how you live.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="different">
+  <div class="diff-label">What makes Handled. different</div>
+  <div class="diff-grid">
+    <div class="diff-item">
+      <div class="diff-title">We know Dubai</div>
+      <div class="diff-text">Our team has deep roots in Dubai — the restaurants that are actually worth booking, the vendors who deliver what they promise, the shortcuts that save real time. That local knowledge is something no algorithm can replicate.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-title">We're transparent about everything</div>
+      <div class="diff-text">Our prices are public. We always present 3 options. You pay vendors directly. We never mark up vendor prices or hide fees. What you see is what you pay — always.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-title">We take responsibility</div>
+      <div class="diff-text">When something goes wrong on our side, we fix it. The request doesn't count, and we make it right. We don't hide behind "the vendor's fault." If we coordinated it, we're accountable for how we coordinated it.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-title">We work on WhatsApp</div>
+      <div class="diff-text">No app to download, no account to create, no platform to learn. You already use WhatsApp every day. Message us the same way you'd message a friend — we take it from there.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<div class="values">
+  <div class="values-inner">
+    <div class="values-label">What we stand for</div>
+    <div class="values-grid">
+      <div class="value">
+        <div class="value-title">Discretion</div>
+        <div class="value-text">Every task is confidential. We never discuss client requests externally. What you share with us stays with us.</div>
+      </div>
+      <div class="value">
+        <div class="value-title">Speed</div>
+        <div class="value-text">First response within 10–30 minutes, depending on your plan. We don't keep you waiting.</div>
+      </div>
+      <div class="value">
+        <div class="value-title">Honesty</div>
+        <div class="value-text">If something can't be done, we tell you immediately and suggest alternatives. No false promises.</div>
+      </div>
+      <div class="value">
+        <div class="value-title">Quality</div>
+        <div class="value-text">We'd rather serve fewer clients exceptionally than many clients adequately. Quality is never compromised for growth.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to have<br>everything<br>handled?</h2>
+  <p>Try it free for 2 weeks. No commitment, no contracts.</p>
+  <a href="https://wa.me/971500000000?text=Hi%2C%20I%27d%20like%20to%20start%20my%20free%20trial%20with%20Handled." class="btn-white" target="_blank">
+    Start Free Trial →
+  </a>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">HANDLED.</div>
+    <div class="footer-tagline">Everything. Handled.</div>
+  </div>
+  <div class="footer-links">
+    <a href="how.html">How it works</a>
+    <a href="services.html">Services</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mailto:hello@behandled.me">Contact</a>
+  </div>
+  <div style="font-size:11px;color:#bbb;">© 2025 Handled. FZE · behandled.me</div>
+</footer>
+
+</body>
+</html>

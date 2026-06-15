@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Handled. Dubai</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0A0A0A;--white:#FFFFFF;--gray:#666;--light:#F5F5F5;--border:#E5E5E5;}
+body{font-family:Arial,sans-serif;background:var(--white);color:var(--black);line-height:1.6;}
+nav{position:fixed;top:0;left:0;right:0;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:100;}
+.nav-logo{font-size:18px;font-weight:300;letter-spacing:6px;text-decoration:none;color:var(--black);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+.nav-links a:hover{color:var(--black);}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 24px;border:none;cursor:pointer;font-size:12px;letter-spacing:2px;font-family:Arial;text-transform:uppercase;}
+
+.page-hero{padding:140px 40px 80px;background:var(--black);text-align:center;}
+.page-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#555;margin-bottom:24px;}
+.page-hero h1{font-size:clamp(32px,5vw,60px);font-weight:200;letter-spacing:6px;color:var(--white);text-transform:uppercase;margin-bottom:20px;}
+.page-hero p{font-size:15px;color:#888;max-width:500px;margin:0 auto;line-height:2;}
+
+.section{padding:100px 40px;max-width:1000px;margin:0 auto;}
+.section-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:60px;text-align:center;}
+
+/* TASK FLOW */
+.task-flow{display:grid;grid-template-columns:1fr;gap:0;}
+.flow-step{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:40px 0;border-bottom:1px solid var(--border);align-items:start;}
+.flow-step:last-child{border-bottom:none;}
+.flow-num{font-size:48px;font-weight:200;color:var(--border);letter-spacing:2px;line-height:1;}
+.flow-content h3{font-size:20px;font-weight:400;margin-bottom:12px;letter-spacing:.5px;}
+.flow-content p{font-size:14px;color:var(--gray);line-height:2;margin-bottom:16px;}
+.flow-example{background:var(--light);padding:16px 20px;font-size:13px;color:var(--black);line-height:1.8;font-style:italic;border-left:3px solid var(--border);}
+
+/* WHATSAPP DEMO */
+.demo-section{background:var(--black);padding:100px 0;}
+.demo-inner{max-width:1000px;margin:0 auto;padding:0 40px;}
+.demo-section .section-tag{color:#333;}
+.demo-section h2{font-size:clamp(24px,4vw,40px);font-weight:200;letter-spacing:4px;color:var(--white);text-transform:uppercase;text-align:center;margin-bottom:60px;}
+.wa-demo{max-width:400px;margin:0 auto;background:#0D1117;border-radius:16px;overflow:hidden;}
+.wa-header{background:#1a1a1a;padding:16px 20px;display:flex;align-items:center;gap:12px;}
+.wa-avatar{width:36px;height:36px;border-radius:50%;background:#222;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;}
+.wa-name{font-size:13px;font-weight:600;color:#fff;letter-spacing:1px;}
+.wa-status{font-size:11px;color:#1D9E75;}
+.wa-body{padding:16px;display:flex;flex-direction:column;gap:10px;background:#0D1117;}
+.msg{max-width:80%;padding:10px 14px;border-radius:10px;font-size:13px;line-height:1.6;}
+.msg.client{background:#1D9E75;color:#fff;border-radius:10px 10px 0 10px;align-self:flex-end;}
+.msg.agent{background:#1a1a1a;color:#ccc;border-radius:10px 10px 10px 0;align-self:flex-start;}
+.msg.agent strong{color:#fff;}
+.msg-time{font-size:10px;opacity:.6;margin-top:4px;text-align:right;}
+.typing{background:#1a1a1a;color:#666;border-radius:10px 10px 10px 0;align-self:flex-start;padding:10px 16px;font-size:13px;}
+
+/* REAL HUMAN */
+.human-section{background:var(--light);padding:100px 0;}
+.human-inner{max-width:1000px;margin:0 auto;padding:0 40px;}
+.human-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px;}
+.human-col h3{font-size:18px;font-weight:400;margin-bottom:16px;padding-bottom:16px;border-bottom:2px solid var(--black);}
+.human-col.ai h3{border-bottom-color:var(--border);}
+.human-col ul{list-style:none;}
+.human-col li{font-size:14px;padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;color:var(--black);line-height:1.6;}
+.human-col.ai li{color:var(--gray);}
+.check{color:#1D9E75;font-size:14px;flex-shrink:0;margin-top:2px;}
+.cross{color:var(--border);font-size:14px;flex-shrink:0;margin-top:2px;}
+
+/* ONBOARDING */
+.onboard-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:60px;}
+.onboard-step{background:var(--white);padding:32px 24px;}
+.onboard-num{font-size:32px;font-weight:200;color:var(--border);margin-bottom:16px;}
+.onboard-title{font-size:15px;font-weight:400;margin-bottom:10px;}
+.onboard-text{font-size:13px;color:var(--gray);line-height:1.9;}
+
+.cta-footer{background:var(--black);padding:80px 40px;text-align:center;}
+.cta-footer h2{font-size:clamp(28px,4vw,48px);font-weight:200;letter-spacing:6px;color:var(--white);text-transform:uppercase;margin-bottom:16px;}
+.cta-footer p{font-size:14px;color:#666;margin-bottom:40px;letter-spacing:1px;}
+.btn-white{background:var(--white);color:var(--black);padding:16px 48px;border:none;cursor:pointer;font-size:12px;letter-spacing:3px;font-family:Arial;text-transform:uppercase;text-decoration:none;display:inline-block;}
+
+footer{padding:40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-size:15px;font-weight:300;letter-spacing:5px;}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:12px;color:var(--gray);text-decoration:none;letter-spacing:1px;}
+
+@media(max-width:768px){
+  nav{padding:16px 20px;}.nav-links{display:none;}
+  .page-hero{padding:100px 20px 60px;}
+  .section{padding:70px 20px;}
+  .flow-step{grid-template-columns:1fr;gap:12px;}
+  .flow-num{font-size:32px;}
+  .demo-inner{padding:0 20px;}
+  .human-inner{padding:0 20px;}
+  .human-grid{grid-template-columns:1fr;}
+  .onboard-steps{grid-template-columns:1fr 1fr;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">HANDLED.</a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="faq.html">FAQ</a>
+    <a href="how.html">How it works</a>
+    <a href="about.html">About</a>
+  </div>
+  <button class="nav-cta" onclick="window.location.href='index.html#pricing'">Get Started</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-tag">The details</div>
+  <h1>How It Works</h1>
+  <p>From the moment you message us to the moment the task is done — here's exactly what happens.</p>
+</div>
+
+<!-- TASK FLOW -->
+<section class="section">
+  <div class="section-tag">Every task, step by step</div>
+  <div class="task-flow">
+
+    <div class="flow-step">
+      <div class="flow-num">01</div>
+      <div class="flow-content">
+        <h3>You send a message on WhatsApp</h3>
+        <p>No forms, no app to download, no account to create. Just message us the way you'd message a friend. Any time — day or night. In English or Arabic.</p>
+        <div class="flow-example">"Book a table for 4 at Zuma tonight, 8pm, it's a business dinner."</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">02</div>
+      <div class="flow-content">
+        <h3>Your assistant reads your request and acts</h3>
+        <p>A real person reads your message. They already know your preferences from your profile — your usual budget, your favourite areas, your dietary restrictions. They don't ask unnecessary questions. They act.</p>
+        <div class="flow-example">Your assistant checks availability, calls the restaurant if needed, and handles any special requests.</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">03</div>
+      <div class="flow-content">
+        <h3>You receive options or a confirmation</h3>
+        <p>For simple tasks: direct confirmation. For tasks with choices (hotels, gifts, travel): 3 curated options presented clearly. You choose, we execute.</p>
+        <div class="flow-example">"Table confirmed at Zuma DIFC, 8pm, 4 guests. They have your name. Let me know if anything changes."</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">04</div>
+      <div class="flow-content">
+        <h3>You pay the vendor directly</h3>
+        <p>Handled. never handles your money for vendor payments. You receive a payment link directly from the vendor — the restaurant, florist, hotel. You pay them. We coordinate everything else.</p>
+        <div class="flow-example">For free reservations: nothing to pay. For orders with payment: vendor sends link directly to you.</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">05</div>
+      <div class="flow-content">
+        <h3>Your assistant follows up</h3>
+        <p>We don't just book and disappear. We send reminders, confirm deliveries, check on time-sensitive tasks. And we update your profile so next time, we know even more about what you need.</p>
+        <div class="flow-example">Reminder sent 2 hours before your reservation. Profile updated: "prefers quiet corner, business dinners."</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHATSAPP DEMO -->
+<div class="demo-section">
+  <div class="demo-inner">
+    <div class="section-tag">See it in action</div>
+    <h2>A real conversation</h2>
+    <div class="wa-demo">
+      <div class="wa-header">
+        <div class="wa-avatar">H.</div>
+        <div>
+          <div class="wa-name">HANDLED.</div>
+          <div class="wa-status">● online</div>
+        </div>
+      </div>
+      <div class="wa-body">
+        <div class="msg client">I need flowers for my wife tonight. It's her birthday and I completely forgot.<div class="msg-time">11:23</div></div>
+        <div class="msg agent"><strong>On it.</strong> White or colourful? And what's your budget?<div class="msg-time">11:24</div></div>
+        <div class="msg client">She loves white roses. Budget around 400 AED.<div class="msg-time">11:24</div></div>
+        <div class="msg agent">Give me 10 minutes. I'll find 3 options with same-day delivery to Marina.<div class="msg-time">11:25</div></div>
+        <div class="msg agent">Here are your options 🌹<br><br><strong>A.</strong> La Fleur — 50 white roses, luxury box — 380 AED<br><strong>B.</strong> Secret Garden — 60 roses, hatbox — 420 AED<br><strong>C.</strong> Petals — mixed white arrangement — 350 AED<br><br>All deliver by 6pm today.<div class="msg-time">11:34</div></div>
+        <div class="msg client">B please! Can you add a card that says "Happy Birthday, I love you"?<div class="msg-time">11:35</div></div>
+        <div class="msg agent"><strong>Done.</strong> Secret Garden confirmed, delivery 5-6pm to your Marina address. Card added with your message. They'll send you a payment link directly. 🌹<div class="msg-time">11:38</div></div>
+        <div class="msg client">You're a lifesaver 🙏<div class="msg-time">11:38</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REAL HUMAN vs AI -->
+<div class="human-section">
+  <div class="human-inner">
+    <div class="section-tag" style="text-align:center">Why a real person makes all the difference</div>
+    <div class="human-grid">
+      <div class="human-col">
+        <h3>Handled. — Real person</h3>
+        <ul>
+          <li><span class="check">✓</span>Calls vendors directly when needed</li>
+          <li><span class="check">✓</span>Remembers your preferences forever</li>
+          <li><span class="check">✓</span>Makes judgment calls in complex situations</li>
+          <li><span class="check">✓</span>Takes responsibility when something goes wrong</li>
+          <li><span class="check">✓</span>Proactively suggests before you ask</li>
+          <li><span class="check">✓</span>Knows the local Dubai market</li>
+          <li><span class="check">✓</span>Reads between the lines of what you need</li>
+          <li><span class="check">✓</span>Available on WhatsApp — no new app</li>
+        </ul>
+      </div>
+      <div class="human-col ai">
+        <h3 style="border-bottom-color:#E5E5E5;">AI assistant / Chatbot</h3>
+        <ul>
+          <li><span class="cross">—</span>Can't make phone calls</li>
+          <li><span class="cross">—</span>No memory between sessions</li>
+          <li><span class="cross">—</span>Struggles with nuanced requests</li>
+          <li><span class="cross">—</span>No accountability for errors</li>
+          <li><span class="cross">—</span>Only responds, never anticipates</li>
+          <li><span class="cross">—</span>No local network or relationships</li>
+          <li><span class="cross">—</span>Takes instructions literally</li>
+          <li><span class="cross">—</span>Requires a separate app or platform</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ONBOARDING -->
+<section class="section">
+  <div class="section-tag">Getting started</div>
+  <div class="onboard-steps">
+    <div class="onboard-step">
+      <div class="onboard-num">01</div>
+      <div class="onboard-title">Choose your plan</div>
+      <div class="onboard-text">Select the plan that fits your needs. Start with Essential and upgrade anytime. No contracts.</div>
+    </div>
+    <div class="onboard-step">
+      <div class="onboard-num">02</div>
+      <div class="onboard-title">We message you</div>
+      <div class="onboard-text">Within minutes, your assistant sends a WhatsApp message and walks you through 10 quick setup questions.</div>
+    </div>
+    <div class="onboard-step">
+      <div class="onboard-num">03</div>
+      <div class="onboard-title">We learn your world</div>
+      <div class="onboard-text">Budget, preferences, favourite spots, family dates. 3 minutes to set up. We use this every single day to serve you better.</div>
+    </div>
+    <div class="onboard-step">
+      <div class="onboard-num">04</div>
+      <div class="onboard-title">Send your first task</div>
+      <div class="onboard-text">That's it. Message us anything. We handle it. The more we work together, the better we get — and the less we need to ask.</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-footer">
+  <h2>Ready to try it?</h2>
+  <p>Your first task is one message away.</p>
+  <a href="index.html#pricing" class="btn-white">Get Started →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">HANDLED.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+  </div>
+  <div style="font-size:11px;color:#bbb;">© 2025 Handled. Dubai · behandled.me</div>
+</footer>
+
+</body>
+</html>
