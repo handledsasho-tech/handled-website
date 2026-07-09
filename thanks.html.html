@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>You're in. — Handled.</title>
+<meta name="description" content="Your Handled. free trial has started.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- ============ ANALYTICS + CONSENT MODE ============ -->
+<!-- Identical to index.html: GA4 starts in consent-denied (cookieless) mode.
+     Meta Pixel loads only if the visitor already accepted cookies. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent','default',{
+    ad_storage:'denied', analytics_storage:'denied',
+    ad_user_data:'denied', ad_personalization:'denied', wait_for_update:500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-09RQSZMHTV');
+  window.fbq = window.fbq || function(){};
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09RQSZMHTV"></script>
+<!-- ============ END TRACKING ============ -->
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0A0A0A;--white:#FFFFFF;--gray:#666;--light:#F5F5F5;--border:#E5E5E5;--green:#1D9E75;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
+
+nav{padding:20px 40px;display:flex;justify-content:center;border-bottom:1px solid #1a1a1a;}
+.nav-logo{font-size:18px;font-weight:300;letter-spacing:6px;text-decoration:none;color:var(--white);}
+
+.wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 24px;}
+.inner{max-width:660px;width:100%;text-align:center;}
+
+h1{font-size:clamp(40px,7vw,72px);font-weight:200;letter-spacing:4px;text-transform:uppercase;line-height:1.05;margin-bottom:28px;}
+.lede{font-size:16px;color:#8a8a8a;font-weight:300;line-height:1.9;max-width:500px;margin:0 auto 56px;letter-spacing:.3px;}
+
+.steps{text-align:left;max-width:480px;margin:0 auto 56px;}
+.step{display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #1a1a1a;}
+.step:last-child{border-bottom:none;}
+.step .n{font-size:12px;font-weight:600;letter-spacing:3px;color:var(--green);flex-shrink:0;width:28px;}
+.step .t{font-size:15px;color:#ccc;font-weight:300;line-height:1.7;}
+.step .t strong{color:var(--white);font-weight:400;}
+
+.btn-primary{background:var(--white);color:var(--black);padding:20px 44px;border:none;cursor:pointer;font-size:12px;letter-spacing:2px;font-family:inherit;text-transform:uppercase;text-decoration:none;display:inline-block;transition:opacity .2s;}
+.btn-primary:hover{opacity:.85;}
+
+.trial{font-size:13px;color:var(--green);margin-top:26px;letter-spacing:.5px;}
+.back{margin-top:44px;}
+.back a{font-size:12px;color:#555;text-decoration:none;letter-spacing:1px;}
+.back a:hover{color:#999;}
+
+footer{padding:28px 40px;text-align:center;border-top:1px solid #1a1a1a;}
+footer p{font-size:11px;color:#444;letter-spacing:1px;}
+
+@media(max-width:640px){
+  nav{padding:18px 24px;}
+  .wrap{padding:56px 22px;}
+  .steps{margin-bottom:44px;}
+}
+</style>
+</head>
+<body>
+
+<nav><a href="/" class="nav-logo">HANDLED.</a></nav>
+
+<div class="wrap">
+  <div class="inner">
+    <h1>You're in.</h1>
+    <p class="lede">Your 14-day trial has started. Nothing is charged today. Here is what happens next.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <div class="t">Message us on WhatsApp. <strong>This is the only step you need to take.</strong></div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div class="t">We ask you four short questions. Four minutes, once. You never fill in a form again.</div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div class="t">Send us the first thing on your list. However small. We take it from there.</div>
+      </div>
+    </div>
+
+    <a id="waBtn"
+       href="https://wa.me/971568926817?text=Hi%2C%20I%27ve%20just%20started%20my%20Handled.%20trial."
+       class="btn-primary" target="_blank" rel="noopener">Open WhatsApp</a>
+
+    <div class="trial">No charge for 14 days · Cancel anytime</div>
+
+    <div class="back"><a href="/">Back to behandled.me</a></div>
+  </div>
+</div>
+
+<footer><p>HANDLED — FZCO · DUBAI</p></footer>
+
+<script>
+// ---- Which plan did they buy? Set by the ?plan= parameter on the Stripe redirect URL.
+var params = new URLSearchParams(window.location.search);
+var plan   = (params.get('plan') || '').toLowerCase();
+var ltv    = plan === 'family' ? 1499 : 999;
+var label  = plan === 'family' ? 'Family' : 'Personal';
+
+// Pre-fill the WhatsApp message with the plan so the agent knows before replying.
+document.getElementById('waBtn').href =
+  'https://wa.me/971568926817?text=' +
+  encodeURIComponent("Hi, I've just started my Handled. " + label + " trial.");
+
+// ---- Conversion tracking (respects the cookie choice made on the main site) ----
+function loadMetaPixel(){
+  if(window._metaLoaded) return; window._metaLoaded = true;
+  !function(f,b,e,v,n,t,s){if(f.fbq&&f.fbq.loaded)return;
+    n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=n.queue||[];
+    t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1675350076859481'); fbq('track','PageView');
+}
+
+var choice=null;
+try{ choice=localStorage.getItem('handled_cookie_consent'); }catch(e){}
+
+if(choice==='accepted'){
+  gtag('consent','update',{
+    ad_storage:'granted', analytics_storage:'granted',
+    ad_user_data:'granted', ad_personalization:'granted'
+  });
+  loadMetaPixel();
+  // Trial started: no money changes hands today, so value is 0 and the
+  // subscription price goes in predicted_ltv.
+  fbq('track','StartTrial',{value:0.00, currency:'AED', predicted_ltv:ltv});
+}
+
+// GA4 fires regardless — in cookieless mode if consent was declined.
+gtag('event','start_trial',{plan:label, value:ltv, currency:'AED'});
+</script>
+
+</body>
+</html>
